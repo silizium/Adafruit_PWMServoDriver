@@ -15,8 +15,11 @@
   Written by Limor Fried/Ladyada for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
  ****************************************************/
-
-#include <Wire.h>
+#ifdef TEENSYDUINO
+  #include <i2c_t3.h>
+#elce
+  #include <Wire.h>
+#endif
 #include <Adafruit_PWMServoDriver.h>
 
 // called this way, it uses the default address 0x40

@@ -16,7 +16,11 @@
  ****************************************************/
 
 #include <Adafruit_PWMServoDriver.h>
-#include <Wire.h>
+#ifdef TEENSYDUINO
+    #include <i2c_t3.h>
+#else
+    #include <Wire.h>
+#endif
 #if defined(__AVR__)
  #define WIRE Wire
 #elif defined(CORE_TEENSY) // Teensy boards
